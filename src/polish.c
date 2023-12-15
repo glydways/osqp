@@ -209,6 +209,7 @@ static void get_ypol_from_yred(OSQPWorkspace *work, c_float *yred) {
   }
 }
 
+__attribute__((no_sanitize("implicit-conversion")))
 c_int polish(OSQPWorkspace *work) {
   c_int mred, polish_successful, exitflag;
   c_float *rhs_red;
