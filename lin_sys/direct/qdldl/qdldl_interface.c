@@ -14,6 +14,7 @@
 #ifndef EMBEDDED
 
 // Free LDL Factorization structure
+__attribute__((no_sanitize("function")))
 void free_linsys_solver_qdldl(qdldl_solver *s) {
     if (s) {
         if (s->L)           csc_spfree(s->L);
@@ -347,6 +348,7 @@ static void LDLSolve(c_float *x, c_float *b, const csc *L, const c_float *Dinv, 
 }
 
 
+__attribute__((no_sanitize("function")))
 c_int solve_linsys_qdldl(qdldl_solver * s, c_float * b) {
     c_int j;
 
